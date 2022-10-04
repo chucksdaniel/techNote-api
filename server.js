@@ -25,7 +25,9 @@ app.use(logger);
 app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "public")));
 
+// Routes
 app.use("/", require("./src/routes/root"));
+app.use("/users", require("./src/routes/userRoute"));
 
 app.all("*", (req, res) => {
 	if (req.accepts("html")) {
