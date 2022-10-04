@@ -4,7 +4,7 @@ const router = express.Router();
 const usersController = require("../controllers/userController");
 
 router
-	.route("/")
+	.route("/users")
 	.get(usersController.getAllUsers)
 	.post(usersController.createNewUser)
 	.patch(usersController.updateUser)
