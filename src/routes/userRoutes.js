@@ -2,9 +2,12 @@ const express = require("express");
 const router = express.Router();
 
 const usersController = require("../controllers/userController");
+const verifyJWT = require("../middlewares/verifyJWT");
+
+router.use(verifyJWT);
 
 router
-	.route("/users")
+	.route("/")
 	.get(usersController.getAllUsers)
 	.post(usersController.createNewUser)
 	.patch(usersController.updateUser)

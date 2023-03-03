@@ -28,9 +28,8 @@ app.use("/", express.static(path.join(__dirname, "public")));
 // app.use(express.static("public")); this still works because it is relative to where server
 
 // Routes
+app.use("/api", require("./src/routes/"));
 app.use("/", require("./src/routes/root"));
-app.use("/api", require("./src/routes/userRoutes"));
-app.use("/api", require("./src/routes/noteRoutes"));
 
 app.all("*", (req, res) => {
 	if (req.accepts("html")) {

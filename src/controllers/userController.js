@@ -32,7 +32,7 @@ const createNewUser = asyncHandler(async (req, res) => {
 	if (
 		!username ||
 		!password ||
-		!email ||
+		// !email ||
 		!Array.isArray(roles) ||
 		!roles.length
 	) {
